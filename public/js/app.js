@@ -9,9 +9,10 @@ weatherForm.addEventListener('submit', (e) => {
 	fetch('/weather?address=' + location).then((response) => {
 		response.json().then((data) => {
 			if (data.error) return (message.textContent = data.error);
+
 			message.textContent =
 				data.location +
-				'\nIt is currently ' +
+				': It is currently ' +
 				data.description +
 				' with a temperature of ' +
 				data.temperature +
